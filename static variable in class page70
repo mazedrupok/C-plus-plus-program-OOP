@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+class sample {
+   static int x, y; // static can be access as private public or protected..
+public:
+   void setxy (int a, int b) {x = a; y = b;}
+   void printxy () {cout << "\n X= " << x << " Y= " << y << endl;}
+};
+int sample :: x;
+int sample :: y;
+int main ()
+{
+   sample smp1, smp2;
+   smp1.setxy (100, 200);
+   smp1.printxy();
+   smp2.printxy(); // By static variable in class we find the modified value
+                        //by an object to another object..
+   return 0;
+}
