@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+class SortMaxofArray {
+   private:
+      int i, j, temp, maxValue, a[5]; // Attributes of class..
+   public:
+      SortMaxofArray () {      // creating Constructor...
+         cout << "Enter five numbers: ";
+         for (i = 0; i < 5; i++)  cin >> a[i];
+         getSortArray ();
+         getMaxArray ();
+      }
+   private:
+      void getSortArray () { // Behavior of Class..
+         for (i = 0; i < 5; i++)
+            for (j = i+1; j < 5; j++)
+            if (a[j] < a[i]) {
+               temp = a[j];
+               a[j] = a[i];
+               a[i] = temp;
+            }
+         cout << "After sort: ";
+         for (i = 0; i < 5; i++) cout << a[i] << ' ';
+      }
+      void getMaxArray () { // Behavior of Class..
+         maxValue = a[0];
+         for (i = 1; i < 5; i++) {
+            if (maxValue < a[i]) maxValue = a[i];
+         }
+         cout << "\nLarge Value is: " << maxValue << endl;
+      }
+};
+int main ()
+{
+   SortMaxofArray obj;
+}
