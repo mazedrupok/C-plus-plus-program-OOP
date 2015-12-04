@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+class X {
+   int x;
+   public:
+      X () { cout << "constructing.." << endl;}
+      ~X () {cout << "destructing..";}
+      void getValue (int p) {x = p;}
+      void squareX () {cout << "Showing Square: " << x*x << endl;}
+};
+void func (X & r) {
+   r.squareX();
+   r.getValue(15);
+}
+int main () {
+   X obj;
+   obj.getValue(10);
+   obj.squareX();
+   func (obj);
+   obj.squareX();
+}
