@@ -1,0 +1,38 @@
+#include <iostream>
+#include <ctime>
+using namespace std;
+class Employee {
+   private:
+      char* emp_name;
+      int emp_join_year;
+      float emp_salary;
+      int yearDiff;
+   public:
+      Employee (char* name, int year, float salary);
+   private:
+      int workedYear ();
+      void printInfo ();
+};
+int Employee::workedYear () {
+   time_t t = time(0);
+   struct tm *now = localtime(&t);
+   yearDiff = (now->tm_year + 1900) - emp_join_year;
+   return yearDiff;
+}
+void Employee::printInfo () {
+   cout << "Name        : " << emp_name << '\n';
+   cout << "Join Date   : " << emp_join_year << '\n';
+   cout << "Salary      : " << emp_salary << '\n';
+   cout << "Worked Year : " << workedYear() << "\n\n";
+}
+Employee::Employee (char* name, int year, float salary) {
+   emp_name = name;
+   emp_join_year = year;
+   emp_salary = salary;
+   printInfo ();
+}
+int main () {
+   Employee Rupok ("Rupok", 1997, 50000);
+   Employee Mazed ("Mazed", 1986, 75000);
+   Employee Abdul ("Abdul", 1990, 60000);
+}
