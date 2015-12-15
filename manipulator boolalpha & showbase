@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+    //freopen ("out.txt", "w", stdout);
+    boolalpha (cout ); //it also can be, cout << boolalpha; sets
+    bool c = 1;
+    cout << c;
+    
+    bool b = true;
+    cout << boolalpha << b << '\n';
+    cout << noboolalpha << b << '\n'; //noboolalpha unsets
+
+    int n = 200;
+    cout << oct << showbase << n << '\n'; //showbase sets
+    cout << hex << noshowbase << n << '\n'; //noshowbase unsets
+    return 0;
+}
+/*
+ios_base& boolalpha (ios_base& str);
+Alphanumerical bool values
+Sets the boolalpha format flag for the str stream.
+
+When the boolalpha format flag is set, bool values are inserted/extracted by their textual representation: either true or false, instead of integral values.
+
+This flag can be unset with the noboolalpha manipulator.
+
+For standard streams, the boolalpha flag is not set on initialization.
+*/
+/*
+ios_base& showbase (ios_base& str);
+
+Show numerical base prefixes
+Sets the showbase format flag for the str stream.
+
+When the showbase format flag is set, numerical integer values inserted into output streams are prefixed with the same prefixes used by C++ literal constants: 0x for hexadecimal values (see hex), 0 for octal values (see oct) and no prefix for decimal-base values (see dec).
+
+This option can be unset with the noshowbase manipulator. When not set, all numerical values are inserted without base prefixes.
+
+For standard streams, the showbase flag is not set on initialization.
+*/
