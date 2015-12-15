@@ -1,0 +1,9 @@
+// modify flags
+#include <iostream>     // std::cout, std::ios
+using namespace std;
+int main () {
+  cout.flags ( ios::left | ios::right | ios::hex | ios::showbase );
+  cout.width (10);
+  cout << 100 << '\n';
+  return 0;
+}
