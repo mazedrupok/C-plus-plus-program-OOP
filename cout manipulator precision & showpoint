@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+using namespace std;
+int main()
+{
+    //freopen ("out.txt", "w", stdout);
+
+  float a = 30;
+  float b = 10000.0;
+  float pi = 3.1416;
+  std::cout.precision (6); //it set how many digits to be printed for a variable..
+  std::cout << std::showpoint << a << " " << b << " " << pi << '\n'; //set showpoint manipulation..
+  std::cout << std::noshowpoint << a << " " << b << " " << pi << '\n'; //unset manipulation..
+    return 0;
+}
