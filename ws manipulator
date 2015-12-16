@@ -1,0 +1,16 @@
+// ws manipulator example
+#include <iostream>     // std::cout, std::noskipws
+#include <sstream>      // std::istringstream, std::ws
+#include <cstdio>
+using namespace std;
+int main () {
+  char a[10], b[10];
+
+  std::istringstream iss ("one  two three");
+  iss >> std::noskipws;
+  iss >> a >> std::ws >> b; //ws works as skipws..
+  std::cout << a << ", " << b << '\n';
+  char ch  = 6;
+  printf ("%c", ch);
+  return 0;
+}
