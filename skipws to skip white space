@@ -1,0 +1,15 @@
+// skipws flag example
+#include <iostream>     // std::cout, std::skipws, std::noskipws
+#include <sstream>      // std::istringstream
+using namespace std;
+int main () {
+  char a, b, c;
+  //std::istringstream iss ("  1 23");
+  cin >> skipws >> a >> b >> c; //set white space to skip
+  cout << a << b << c << '\n';
+
+  //iss.seekg(0);
+  cin >> noskipws >> a >> b >> c; //unset white space to skip
+  cout << a << b << c << '\n';
+  return 0;
+}
