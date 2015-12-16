@@ -1,0 +1,10 @@
+// setbase example
+#include <iostream>     // std::cout, std::endl
+#include <iomanip>      // std::setbase
+#include <cstdio>
+int main () {
+  std::cout << std::setbase(16); //for hex, oct, dec only.. 
+  std::cout << 1199 << std::endl;
+
+  return 0;
+}
