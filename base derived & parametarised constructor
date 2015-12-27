@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+class bas {
+    int x, y;
+    public:
+    bas (int i, int j) {
+        x = i; y = j;
+        cout << "Base value: " << x << " " << y << endl;
+    }
+};
+class deri : public bas {
+    int x, y;
+    public:
+    deri (int i, int j) : bas (i+10, j+20) {
+        x = i; y = j;
+    }
+};
+int main ()
+{
+    deri d1 (2, 3);
+
+}
