@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+class node {
+public:
+    int a; int b;
+
+    node operator + (node x) { //Add two node type objects
+        node temp;
+        temp.a = a + x.a;
+        temp.b = b + x.b;
+        return temp;
+    }
+    node operator + (int x) { //Add a node type object with int x
+        node temp;
+        temp.a = a + x;
+        temp.b = b + x;
+        return temp;
+    }
+    node operator ++ () { //prefix ++ operator
+        node temp;
+        temp.a = a+1;
+        temp.b = b+1;
+        return temp;
+    }
+    void operator ++ (int x) { //postfix ++ operator
+        a = a + 1;
+        b = b + 1;
+    }
+    void operator += (node x) {
+        a += x.a;
+        b += x.b;
+    }
+    void operator += (int x) {
+        a += x;
+        b += x;
+    }
+};
+
+int main ()
+{
+    node p, q, r;
+    p.a = 2;
+    p.b = 5;
+    q.a = 4;
+    q.b = 3;
+    r = p+q;
+    p += 2;
+    cout << r.a << " " << r.b << endl;
+    cout << p.a << " " << p.b << endl;
+
+    return 0;
+}
