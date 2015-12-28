@@ -16,16 +16,20 @@ public:
         temp.b = b + x;
         return temp;
     }
-    node operator ++ () { //prefix ++ operator
-        node temp;
-        temp.a = a+1;
-        temp.b = b+1;
-        return temp;
+    void operator ++ () { //prefix ++ operator
+        a++;    //++p  here p send as argument by this pointer..
+        b++;
     }
     void operator ++ (int x) { //postfix ++ operator
-        a = a + 1;
-        b = b + 1;
+        a++;  //p++ sends p as argument by this..
+        b++;
     }
+    //both can be defined with return type where this is returned..
+//    node operator ++ () {
+//        a++;
+//        b++;
+//        return *this;
+//    }
     void operator += (node x) {
         a += x.a;
         b += x.b;
@@ -51,6 +55,9 @@ int main ()
     p += 2;
     cout << r.a << " " << r.b << endl;
     cout << p.a << " " << p.b << endl;
-
+    p++;
+    cout << p.a << " " << p.b << endl;
+    ++p;
+    cout << p.a << " " << p.b << endl;
     return 0;
 }
