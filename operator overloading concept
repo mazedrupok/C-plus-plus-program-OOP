@@ -34,6 +34,10 @@ public:
         a += x;
         b += x;
     }
+    bool operator < (const node& p) const { //for sorting, mapping or other like this
+        if (a == p.a) return b < p.b;
+        else return a < p.a;
+    }
 };
 
 int main ()
