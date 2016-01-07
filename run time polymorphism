@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+class Base
+{
+public:
+
+    virtual void display(int i)
+    { cout<<"Base::"<<i; }
+};
+
+class Derv: public Base
+{
+public:
+
+    void display(int j)
+    { cout<<"Derv::"<<j; }
+};
+
+int main()
+{
+    Base *ptr=new Derv;
+    ptr->display(10);
+    return 0;
+}
